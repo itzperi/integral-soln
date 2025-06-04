@@ -5,7 +5,24 @@ import { useTheme } from "@/hooks/useTheme";
 import ThemeToggle from "./ThemeToggle";
 import { MapPin } from "lucide-react";
 
+interface OnboardingScreenProps {
+  onContinue: () => void;
+  darkMode?: boolean; // Added darkMode to props
+}
 
+const OnboardingScreen: React.FC<OnboardingScreenProps> = ({
+  onContinue
+}) => {
+  const { darkMode } = useTheme();
+  const [destination, setDestination] = useState("");
+  const [duration, setDuration] = useState("");
+  const [companion, setCompanion] = useState("");
+
+  // Handle form submit
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    onContinue();
+  };
 
 
   return (
