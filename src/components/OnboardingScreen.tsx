@@ -1,4 +1,9 @@
-
+import React, { useState } from "react";
+import { Button } from "@/components/ui/button";
+import StatusBar from "./StatusBar";
+import { useTheme } from "@/hooks/useTheme";
+import ThemeToggle from "./ThemeToggle";
+import { MapPin } from "lucide-react";
 
 
 interface OnboardingScreenProps {
